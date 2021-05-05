@@ -5,9 +5,7 @@ const Constraint = Matter.Constraint;
 
 var engine, world;
 var backgroundImg;
-var time;
 var bg ;
-var hrm;
 
 function preload() {
     getBackgroundImg();
@@ -33,7 +31,6 @@ async function getBackgroundImg(){
     var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata")
     var responseJson = await response.json();
     var dt = responseJson.datetime;
-    hrm = dt.slice(11,16);
     var hr = dt.slice(11,13);
 
     if(hr>04 && hr<06){
